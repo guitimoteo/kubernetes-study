@@ -3,11 +3,14 @@ kind: ReplicaSet
 metadata:
         name: webapp
 spec:
-        replicas: 1
+        selector:
+                matchLabels:
+                        app: webapp
+        replicas: 2
         template: 
                 metadata: 
                   labels:
-                    app: webappp
+                    app: webapp
                 spec:
                   containers:
                   - name: webapp
